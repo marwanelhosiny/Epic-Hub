@@ -1092,4 +1092,164 @@ input[type=radio] {
   font-family: var(--ff-montserrat);
 }
 
+
+/* More specific fix for email links */
+.c_boxx a[href^="mailto:"] {
+  font-size: 0.9em;
+  /* Slightly smaller on mobile if needed */
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .c_boxx a {
+    font-size: 0.85em;
+  }
+}
+
+        /* Popup Overlay */
+        .popup-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 9999;
+          animation: fadeIn 0.3s ease;
+        }
+    
+        .popup-overlay.active {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        /* Popup Box */
+        .popup-box {
+          background: white;
+          border-radius: 20px;
+          padding: 40px;
+          max-width: 400px;
+          width: 90%;
+          text-align: center;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+          animation: slideUp 0.4s ease;
+          position: relative;
+        }
+    
+        /* Success Icon */
+        .popup-icon {
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 40px;
+        }
+    
+        .popup-icon.success {
+          background: linear-gradient(135deg, #667eea 0%, #fc036b 100%);
+          color: white;
+          animation: scaleIn 0.5s ease;
+        }
+    
+        .popup-icon.error {
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          color: white;
+          animation: shake 0.5s ease;
+        }
+    
+        /* Popup Text */
+        .popup-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #333;
+        }
+    
+        .popup-message {
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 30px;
+          line-height: 1.5;
+        }
+    
+        /* Popup Button */
+        .popup-button {
+          background: linear-gradient(135deg, #fc036b 0%, #fc036b 100%);
+          color: white;
+          border: none;
+          padding: 12px 40px;
+          border-radius: 25px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+    
+        .popup-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    
+        .popup-button:active {
+          transform: translateY(0);
+        }
+    
+        /* Animations */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+    
+          to {
+            opacity: 1;
+          }
+        }
+    
+        @keyframes slideUp {
+          from {
+            transform: translateY(50px);
+            opacity: 0;
+          }
+    
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+    
+        @keyframes scaleIn {
+          0% {
+            transform: scale(0);
+          }
+    
+          50% {
+            transform: scale(1.1);
+          }
+    
+          100% {
+            transform: scale(1);
+          }
+        }
+    
+        @keyframes shake {
+    
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+    
+          25% {
+            transform: translateX(-10px);
+          }
+    
+          75% {
+            transform: translateX(10px);
+          }
+        }
+
 /* end */
